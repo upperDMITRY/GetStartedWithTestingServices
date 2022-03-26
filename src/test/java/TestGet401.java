@@ -26,6 +26,5 @@ public class TestGet401 {
         actualStatus = response.getStatusLine().getStatusCode();
 
         assertEquals(actualStatus, 401);
-
     }
 }

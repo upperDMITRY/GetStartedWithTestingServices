@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 
 
 import java.io.IOException;
-import java.util.Optional;
 
 import static org.testng.Assert.assertEquals;
 
@@ -18,7 +17,7 @@ public class TestGet304 extends BaseClass {
 
     @Test
     public void baseUrlReturns200() throws IOException {
-        HttpGet httpGet = new HttpGet(baseURL);
+        HttpGet httpGet = new HttpGet(BASEURL);
 
         CloseableHttpClient client = HttpClientBuilder.create().build();
 

@@ -16,7 +16,7 @@ public class TestGet extends BaseClass {
 
     @Test
     public void baseUrlReturns200() throws IOException {
-        HttpGet httpGet = new HttpGet(baseURL);
+        HttpGet httpGet = new HttpGet(BASEURL);
 
         CloseableHttpClient client = HttpClientBuilder.create().build();
 
@@ -55,7 +55,7 @@ public class TestGet extends BaseClass {
 
     @Test
     public void baseUrlWithHeaders() throws IOException {
-        HttpGet httpGet = new HttpGet(baseURL);
+        HttpGet httpGet = new HttpGet(BASEURL);
         httpGet.setHeader("name", "privet");
 
         CloseableHttpClient client = HttpClientBuilder.create().build();
