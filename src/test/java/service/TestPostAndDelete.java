@@ -1,3 +1,5 @@
+package service;
+
 import entities.BaseClass;
 import org.apache.http.HttpHeaders;
 import org.apache.http.client.methods.CloseableHttpResponse;

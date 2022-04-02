@@ -1,4 +1,4 @@
-package lab;
+package service.lab;
 
 import entities.BaseClass;
 import org.apache.http.Header;

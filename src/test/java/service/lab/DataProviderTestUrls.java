@@ -1,3 +1,5 @@
+package service.lab;
+
 import entities.BaseClass;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -7,13 +9,19 @@ import org.testng.annotations.*;
 
 import java.io.IOException;
 
-import static entities.ResponseUtils.getHeader;
 import static org.testng.Assert.assertEquals;
 
-public class TestHeaderLab extends BaseClass {
 
+public class DataProviderTestUrls extends BaseClass {
+
+    private int actualStatus;
     private CloseableHttpClient client;
     private CloseableHttpResponse response;
+
+    @DataProvider
+    public static Object[][] urls() {
+        return new Object[][]{{"/emojis"}, {"/user/followers"}, {"/vasea"}};
+    }
 
     @BeforeMethod
     public void setUp() {
@@ -26,14 +34,14 @@ public class TestHeaderLab extends BaseClass {
         response.close();
     }
 
-    @Test
-    public void testAccessControlHeaderMine() throws IOException {
-        HttpGet httpGet = new HttpGet(BASEURL);
+    @Test(dataProvider = "urls")
+    public void EmojisURLReturns200(String endpoint) throws IOException {
+        HttpGet httpGet = new HttpGet(BASEURL + endpoint);
 
         response = client.execute(httpGet);
 
-        String header = getHeader(response, "access-control-allow-origin");
+        actualStatus = response.getStatusLine().getStatusCode();
 
-        assertEquals(header, "*");
+        assertEquals(actualStatus, 200);
     }
 }

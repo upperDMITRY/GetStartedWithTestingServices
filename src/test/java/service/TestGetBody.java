@@ -1,3 +1,5 @@
+package service;
+
 import entities.BaseClass;
 import entities.User;
 import org.apache.http.client.methods.CloseableHttpResponse;
