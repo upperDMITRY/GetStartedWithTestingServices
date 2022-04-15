@@ -7,5 +7,5 @@ public class BaseClass {
     protected static final String TOKEN = "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";
 
     public static final String USERNAME = "upperDMITRY";
-    public static final String PASS = "30022Dimas";
+    public static final String PASS = "";
 }
